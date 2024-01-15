@@ -1,0 +1,41 @@
+{{ define "main" }}
+  <div class="single">
+    <div class="singlePageHeader">
+      <div class="singlePageText">
+        <h1 class="singlePageHeaderTitle">{{ .Title }}</h1>
+        <p class="singlePageHederDescription">{{ .Params.description }}</p>
+        <div class="singlePageDetail">
+          <img
+            src="/images/avatar.png"
+            alt="avatar"
+            class="singlePageHederAvatar"
+            loading="lazy"
+          />
+          <div class="detailWrapper">
+            <span class="singlePageHederAuthor">{{ .Params.author }}</span>
+            <span
+              >{{ range (.GetTerms "categories") }}
+                <a href="{{ .Permalink }}" class="singlePageHederCategory"
+                  >{{ .Name }}
+                </a>
+              {{ end }}</span
+            >
+          </div>
+        </div>
+        <div class="singlePageHeaderDate">
+          {{ dateFormat .Site.Params.dateFormat .Date }}
+        </div>
+      </div>
+
+      <img
+        class="singlePageHeaderImage"
+        src="{{ .Params.imageBig }}"
+        alt="{{ .Title }}"
+      />
+    </div>
+    <div class="singlePageBottom">
+      <div class="singlePageContent">{{ .Content }}</div>
+      <div class="singleRightBar">{{ partial "rigthBar" }}</div>
+    </div>
+  </div>
+{{ end }}

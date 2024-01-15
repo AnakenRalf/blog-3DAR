@@ -1,0 +1,12 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = '3DAR blog'
+titlelogo = '3DAR'
+
+[params]  
+  dateFormat = "Jan 2, 2006"
+
+[taxonomies]
+  author = "authors"
+  tag = "tags"
+  category = "categories"

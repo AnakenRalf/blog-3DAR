@@ -1,0 +1,3 @@
+# node mod and config ignore
+/public/**
+/resources/**
